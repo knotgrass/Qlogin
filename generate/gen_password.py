@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 from dataclasses import dataclass
 from string import (ascii_lowercase as lowercase_,
                     ascii_uppercase as uppercase_,
@@ -8,16 +8,17 @@ from string import (ascii_lowercase as lowercase_,
                     punctuation as punctuation_,
                     printable as printable_)
 
+@dataclass
+class Character: ...
+
+class Ambiguous(Character):
+    lower:str = lowercase_
+    upper:str = uppercase_
+    number:str = digits_
+    punctuation:str = punctuation_
 
 @dataclass
-class Ambiguous:
-    lower:str = lowercase_[11]                 # "l"  ell
-    upper:str = uppercase_[8] + uppercase_[14] # "IO" capital i, capital o
-    number:str = digits_[:2]                   # "01" zero and one
-    punctuation:str = punctuation_[-3]         # "|"  vertical bar
-
-@dataclass
-class Unambiguous:
+class Unambiguous(Character):
     lower:str = lowercase_.replace('l', '')                  # "l"  ell
     upper:str = uppercase_.replace('I', '').replace('O', '') # "IO" capital i, capital o
     number:str = digits_[2:]                                 # "01" zero and one
@@ -27,9 +28,10 @@ class Unambiguous:
 def get_random_passwd(size:int=15, min_num:int=1, min_punc:int=1,
                       avoid_ambiguous_characters:int=True) -> str:
     if avoid_ambiguous_characters:
-        all_char = ...
+        character = Unambiguous
     else:
-        all_char = ...
-
+        character = Ambiguous
+    
+    num_of_num = randint(min_num, size - min_punc - 2)
+    num_of_punc = randint(min_punc, size - num_of_num - 2)
     return
-
