@@ -11,13 +11,13 @@ def print_passwd(str_passwd:str) -> str:
             colored += f"{Fore.WHITE}{char}"
         else:
             colored += f"{Fore.RED}{char}"
-
-    print(colored + Style.RESET_ALL)
+    colored += Style.RESET_ALL
+    print(colored)
     return colored
 
 if __name__ == '__main__':
     # Example usage
-    str_passwd = r"""25d8w5R=}%ggzsa"""
-    inputing = "A string with 123 and @#! characters"
-    print_passwd(str_passwd)
-    print_passwd(inputing)
+    str_passwd = r"""25d8w5R=}%ggzsa1"""
+    inputing = "A string with 123 and @#! characters &`"
+    colored = print_passwd(str_passwd); print(colored, 'helloworld')
+    colored = print_passwd(inputing); print(colored, 'helloworld')
