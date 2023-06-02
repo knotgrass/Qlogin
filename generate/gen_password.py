@@ -1,9 +1,11 @@
-from random import choice, randint, shuffle
+from random import choice, randint, shuffle, seed as seed_
 from .character import Ambiguous, Unambiguous
 
 
 def get_random_passwd(size:int=15, min_num:int=1, min_punc:int=1,
-                      avoid_ambiguous_characters:int=True) -> str:
+                      avoid_ambiguous_characters:int=True,
+                      seed:int|None=None ) -> str:
+    seed_(seed)
     if avoid_ambiguous_characters:
         character = Unambiguous
     else:
@@ -23,9 +25,9 @@ def get_random_passwd(size:int=15, min_num:int=1, min_punc:int=1,
 
     shuffle(passwd)
     str_passwd = ''.join(passwd)
-    print(str_passwd)
-    print(f'num_of_num = {num_of_num}\nnum_of_punc = {num_of_punc} \nnum_of_lower = {num_of_lower} \nnum_of_upper = {num_of_upper}')
-    print()
+    # print(str_passwd)
+    # print(f'num_of_num = {num_of_num}\nnum_of_punc = {num_of_punc} \nnum_of_lower = {num_of_lower} \nnum_of_upper = {num_of_upper}')
+    # print()
     return str_passwd, (num_of_num, num_of_punc, num_of_lower, num_of_upper)
 
 if __name__ == '__main__':
