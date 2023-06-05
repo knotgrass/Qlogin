@@ -22,7 +22,7 @@ for synset in wordnet.all_synsets(pos=wordnet.ADJ):
                 adjectives.append(adj)
 
 adjectives = set(adjectives)
-with open('generate/eng_adj.txt', 'w') as f:
+with open('generate/eng_adj.txt', 'w', encoding="ascii") as f:
     f.write('\n'.join(adjectives))
 
 print(len(adjectives))

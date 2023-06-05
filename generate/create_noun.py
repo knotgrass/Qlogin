@@ -28,6 +28,6 @@ for synset in wordnet.all_synsets(pos=wordnet.NOUN):
                 nouns.append(noun)
 
 nouns = set(nouns)
-with open('generate/eng_noun.txt', 'w') as f:
+with open('generate/eng_noun.txt', 'w', encoding="ascii") as f:
     f.write('\n'.join(nouns))
 print(len(nouns))
