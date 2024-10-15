@@ -1,4 +1,3 @@
-import code
 from dataclasses import dataclass
 from string import (ascii_lowercase as lowercase_,
                     ascii_uppercase as uppercase_,
