@@ -1,6 +1,8 @@
 # generate username & passwd
 generator username &amp; password
 
+https://xkcd.com/936/
+
 password strength
 * [zxcvbn](https://github.com/dropbox/zxcvbn)
 * https://xkcd.com/936/

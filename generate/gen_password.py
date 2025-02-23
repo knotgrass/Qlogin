@@ -1,5 +1,5 @@
-from random  import (choice  as choice_,
-                     randint as randint_,
+from secrets import choice as choice_ # https://docs.python.org/3/library/secrets.html
+from random  import (randint as randint_,
                      shuffle as shuffle_,
                      seed    as seed_ )
 
