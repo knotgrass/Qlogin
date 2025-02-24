@@ -7,7 +7,7 @@ setup(
     install_requires=[
         'colorama',
     ],
-    author='andy-dang',
+    author='anthony-dang',
     description='Generate password and username',
     classifiers=[
         'Programming Language :: Python :: 3',
