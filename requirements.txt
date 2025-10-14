@@ -3,3 +3,4 @@ python-dotenv
 httpx
 zxcvbn
 argon2-cffi
+tink[all]
